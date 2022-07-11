@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="This is where your description goes">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>Title in the tab</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@100;200;300&family=IBM+Plex+Serif:wght@500;600;700&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		
+		<section id="section-1">
+			<nav>
+				<a href="#"><img class="logo-white" src="/img/white-logo.png" width="500" height="500"></a>
+
+				<ul class="nav-links" alt = 'logo'>
+					<li><a href="#">HOME</a> </li>
+					<li><a href="#section-2">APOD</a></li>
+					<li><a href="#">ABOUT</a></li>
+				</ul>
+				<div class="burger">
+					<div class="line1"></div>
+					<div class="line2"></div>
+					<div class="line3"></div>
+				</div>
+			</nav> 
+			<div class="intro-container">
+				<div class="text-container">
+					<h2>Intuition is Good, research is Even bette</h2>
+					<p class ='paragraph-text'>Sit back, and relax because we'll give you a truly out of this world experience</p>
+				</div>
+				<div class="button-container">
+					<a href="#section-2"><button class="my-button">Explore</button></a>
+				</div>
+
+			</div>
+			
+
+			<div class="scroll-container">
+				<a id="scroll-btn" href="#section-2"><div class="arrow"></div></a>
+			<p class="scroll-txt" href="#section-2">scroll-down</p>
+		</div>
+			
+			
+
+		  </section>
+		  <section id="section-2" >
+		
+				<div class="img-container">
+					<img src=""  alt="picture of the day" class = 'img-api'>
+					<button class="btn-activate-api">Next</button>
+
+				</div>
+				<div class="api-container">
+					<div class="text-api-container">
+					<h2 class="text-api-header"></h2>
+					<p class="text-api-explanation"></p>
+					<p>Shared by <span id="author-api"></span> on Jul 1, 2022</p> 
+				</div>
+
+			</div>
+		  </section>
+	  
+		<script type="text/javascript" src="js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,449 @@
+/* <------------------------PRESENT -------------------->*/
+
+
+/* <------------------------COLOR VARIABLES -------------------->*/
+
+:root {
+  --main-bg-color: rgba(0, 0, 0, 0.995);
+  --secondary-bg-color: rgb(28, 28, 28);
+  --nav-bg-color: rgb(10, 85, 135);
+  --txt-color:rgb(184, 185, 195);
+  --btn-color:rgb(184, 185, 195);
+  --hover-btn-color:rgb(10, 85, 134);
+
+
+}
+
+/* <------------------------LAYOUT -------------------->*/
+
+html{
+    font-size: 16px;
+    scroll-behavior: smooth;
+    font-family: 'IBM Plex Serif', serif;
+  }
+
+
+/* <------------------------BACKGROUND IMG SET UP -------------------->*/
+#section-1, #section-2{
+  background-color: var(--main-bg-color);
+  background-image:
+  linear-gradient(rgba(15, 73, 144, 0.5), rgba(56, 56, 56, 0.5)), url("/img/LIGHTS.png");
+  background-size: contain;
+  background-repeat: space repeat;
+
+}
+/* <------------------------SECTION 1 -------------------->*/
+
+
+section {
+  height: 100vh;
+display: flex;
+font-family: 'IBM Plex Serif', serif;
+
+
+}
+
+
+ /* TEXT   */
+.intro-container {
+  height: 1rem;
+  display: flex;
+  gap: 19rem;
+  justify-content: center;
+  margin: 40vh 20rem 0;
+  font-family: 'IBM Plex Serif', serif;
+ 
+
+}
+
+.text-container{
+  display: flex;
+width: 50%;
+flex-direction: column;
+
+}
+
+.intro-container h2{
+  color: whitesmoke;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: 'IBM Plex Serif', serif;
+
+
+}
+
+.paragraph-text {
+  color: var(--txt-color);
+  font-size: 2rem;
+  text-transform:none;
+  font-weight:100;
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+/* ROUND BTN    */
+.my-button{
+  width: 200px;
+  height: 200px;
+  font-family: 'IBM Plex Serif', serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  background: var(--secondary-bg-color);
+  color: whitesmoke; 
+  cursor: pointer;
+  box-shadow: 0 5px 10px var(--secondary-bg-color);
+}
+
+.my-button:hover{
+  background: var(--hover-btn-color);
+}
+
+  nav{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    color: var(--txt-color);
+    width: 100%;
+    position: fixed;
+    z-index: 10;
+    margin-top: 2rem;
+}
+
+  .nav-links{
+
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    position: fixed;
+
+    
+}
+
+  .nav-links li{
+    list-style: none;
+    
+
+  }
+
+  .nav-links a{
+    font-family: 'IBM Plex Serif', serif;
+    font-weight: 700;
+    color:beige;
+    text-decoration: none;
+    letter-spacing: .23rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    position: relative;
+    
+  }
+
+  .nav-links a:hover{
+    color: var(--nav-bg-color);
+
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    width: 0%;
+    height: .18rem;
+    background: var(--txt-color);
+    transition: 0.4s ease-out;
+}
+
+  .nav-links a:hover::after {
+    left: 0;
+    width: 100%;
+}
+
+.logo-white {
+  width: 20%;
+  height: auto;
+  aspect-ratio: attr(width) / attr(height);
+  position: relative;
+  right: 40%;
+} 
+.hidden{
+  display: none;
+
+}
+@media screen and (max-width: 1920px){
+  .logo-white{
+    
+    right: 20%;  }
+}
+
+@media screen and (max-width: 1250px){
+  .logo-white{
+    
+    right: 0%;  }
+}
+
+/* BURGER  */
+
+
+  .burger{
+      display: none;
+      cursor: pointer;
+  }
+  .burger div{
+      width: 1.6rem;
+      height: .24rem;
+      background-color: var(--txt-nav-color);
+      margin: .3rem;
+      transition: all 0.3s;
+  }
+
+
+  @media screen and (max-width: 1250px){
+.nav-links{
+      width: 60%;
+    }
+  }
+    /* nav bar for small device */
+
+    @media screen and (max-width: 768px){
+      body{
+        overflow-x: hidden;
+      }
+      .nav-links{
+        
+        position: absolute;
+        right: 0px;
+        height: 92vh;
+        top: 6vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+      }
+      .nav-links li{
+        opacity: 0;
+        
+      }
+
+      .srcoll-container{
+        overflow: hidden;
+      }
+      .burger{
+        display: block;
+      }
+     
+    }
+
+  .nav-active{
+    transform: translateX(0%);
+
+  }
+
+    /* animation for nav bar */
+
+    @keyframes navLinkFade{
+      from{
+        opacity: 0;
+        transform: translateX(3.1rem)
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0rem);
+
+        }
+    }
+
+    .toggle .line1{
+        transform:  rotate(-45deg) translate( -5px, 7px);
+    }
+    .toggle .line2{
+        opacity: 0;
+    }
+    .toggle .line3{
+        transform:  rotate(45deg) translate(-5px, -6px);
+    }
+
+
+  /* SCROLL BTN  */
+  a#scroll-btn {
+    width: 4.25em;
+    border: 0.2em solid var(--btn-color);
+
+    position: absolute;
+    height: 4.25em;
+    margin: auto;
+    left: 0;
+    right: 0;
+    bottom: 6.25em;
+    border-radius: 6.25em;      
+    }
+    
+  a#scroll-btn:hover {
+    transition: 0.4s ease;
+    height: 8.25em;
+    border-color: var(--hover-btn-color);    
+    }     
+    
+  /* SCROLL ARROW TEXT */
+  p.scroll-txt{
+    position: absolute;
+    text-align: center;
+    left: 0;
+    right: 0;
+    bottom: 1.25em;
+    font-size: 1.3em;
+    color: whitesmoke;
+    letter-spacing: 3px;
+    font-weight: 700;
+    font-family: 'IBM Plex Serif', serif;
+    text-transform: uppercase;
+    }
+
+  
+
+  .scroll-txt:hover {
+  color: var(--hover-btn-color);
+
+}
+    
+  @media screen and (max-width: 500px) {
+    a#scroll-btn {
+    font-size: 12px;
+  }
+  }
+    
+  /* SCROLL ARROW  */
+
+  div.arrow {
+    width: 2vmin;
+    height: 2vmin;
+    box-sizing: border-box;
+    position: absolute;
+    left: 44%;
+    top: 35%;
+    transform: rotate(135deg);
+    
+  }
+  div.arrow::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-width: 0.8vmin 0.8vmin 0 0;
+    border-style: solid;
+    border-color: var(--btn-color);
+    transition: 0.2s ease;
+    display: block;
+    transform-origin: 100% 0;
+    }
+    
+  div.arrow:after {
+    content: "";
+    float: left;
+    position: relative;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    border-width: 0 0.8vmin 0 0;
+    border-style: solid;
+    border-color: var(--btn-color);
+    transform-origin: 100% 0;
+    transition: 0.2s ease;
+  }
+  div.arrow:hover::after {
+    transform: rotate(45deg);
+    border-color: var(--hover-btn-color);
+    height: 120%;
+  }
+
+  div.arrow:hover::before {
+    border-color: var(--hover-btn-color);
+    transform: scale(0.8);
+  }
+
+
+/* <------------------------SECTION 2 -------------------->*/
+#section-2 {
+  color: whitesmoke;
+  font-size: 2.7em;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+}
+.img-container{
+  width: 40%;
+  height: 100px;
+}
+.api-container{
+  background: rgba(238,238,238,0.2);
+  -webkit-backdrop-filter: blur(50px);
+  backdrop-filter: blur(50px);
+  border: 1px solid rgba(238,238,238,0.1);
+  border-radius: 15px 50px;
+  width: 40%;
+  
+}
+
+/*API INTERACTIVE CONTAINER */
+.text-api-container{
+  padding: 0.9rem;
+}
+
+.api-container{
+  position: relative;
+ padding:  0;
+  margin: 0;
+ height: 50vh;
+  overflow: auto; 
+}
+
+.text-api-container p{
+  font-size: 1.5rem;
+
+}
+
+.text-api-header{
+  font-size: 2rem;
+}
+
+  /*IMG SETUP  API */
+
+  .img-api{
+    width: 30vw;
+  }
+  /*BUTTON GENERATOR API */
+
+  .btn-activate-api {
+    box-shadow: 0px 1px 0px 0px #23395e;
+    background:linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+    background-color:#2e466e;
+    border-radius:15px;
+    border:2px solid #1f2f47;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family: 'IBM Plex Sans Condensed', sans-serif;    font-size:2rem;
+    font-weight:600;
+    padding:12px 16px;
+    text-transform: uppercase;
+    text-shadow:0px 1px 0px #263666;
+    letter-spacing: 2px;
+    width: 15rem;
+    height: 5rem;
+  }
+  .btn-activate-api:hover {
+    background:linear-gradient(to bottom, #173b83 5%, #123269 100%);
+    background-color:#415989;
+  }
+  .btn-activate-api:active {
+    position:relative;
+    top:1px;
+  }
+  
